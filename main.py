@@ -3,7 +3,6 @@ import cv2
 import numpy as np
 import time
 
-#contants
 ml = 150
 max_x, max_y = 250+ml, 50
 curr_tool = "select tool"
@@ -13,7 +12,6 @@ var_inits = False
 thick = 4
 prevx, prevy = 0,0
 
-#get tools function
 def getTool(x):
 	if x < 50 + ml:
 		return "line"
@@ -43,7 +41,7 @@ hand_landmark = hands.Hands(min_detection_confidence=0.6, min_tracking_confidenc
 draw = mp.solutions.drawing_utils
 
 
-# drawing tools
+
 tools = cv2.imread("tools.png")
 tools = tools.astype('uint8')
 
